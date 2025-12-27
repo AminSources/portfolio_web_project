@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_page/core/constants/colors.dart';
 import 'package:personal_page/core/utils/theme_extension.dart';
 import 'package:personal_page/futures/home_future/presentation/widgets/app_bar_actions.dart';
+import 'package:personal_page/futures/home_future/presentation/widgets/profile_image.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,10 +20,14 @@ class HomePage extends StatelessWidget {
       ),
 
       //* body of page
-      body: SizedBox.expand(child: Column(children: [
-            
+      body: SizedBox.expand(
+        child: Column(
+          children: [
+            //* profile image
+            ProfileImage(),
           ],
-        )),
+        ),
+      ),
     );
   }
 }
