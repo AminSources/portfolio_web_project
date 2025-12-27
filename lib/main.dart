@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_page/core/configs/app_theme.dart';
 import 'package:personal_page/core/routes/routes.dart';
 
-void main() {}
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
