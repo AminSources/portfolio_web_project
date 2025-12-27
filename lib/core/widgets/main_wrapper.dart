@@ -4,6 +4,7 @@ import 'package:personal_page/core/utils/theme_extension.dart';
 import 'package:personal_page/core/widgets/txt.dart';
 import 'package:personal_page/futures/home_future/presentation/pages/about_me_page.dart';
 import 'package:personal_page/futures/home_future/presentation/pages/home_page.dart';
+import 'package:personal_page/futures/home_future/presentation/pages/skill_page.dart';
 import 'package:personal_page/futures/home_future/presentation/widgets/app_bar_actions.dart';
 
 class MainWrapper extends StatelessWidget {
@@ -36,6 +37,9 @@ class MainWrapper extends StatelessWidget {
 
               //* about me page
               AboutMePage(),
+
+              //* skills page
+              SkillPage(),
             ],
           ),
         ),
