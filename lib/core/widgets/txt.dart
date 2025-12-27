@@ -39,7 +39,7 @@ class txt extends StatelessWidget {
         decorationColor: decorationColor,
         fontSize: size,
         color: color ?? Theme.of(context).colorScheme.onPrimary,
-        fontFamily: fontFamily ?? "poppins",
+        fontFamily: fontFamily,
         fontWeight: fontWeight,
       ),
     );
