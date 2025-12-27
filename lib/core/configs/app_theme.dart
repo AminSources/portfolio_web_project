@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_page/core/constants/colors.dart';
 
 class AppTheme {
@@ -23,7 +24,14 @@ class AppTheme {
 
     scaffoldBackgroundColor: darkGrayDefault,
 
-    chipTheme: ChipThemeData(backgroundColor: darkGray200),
+    chipTheme: ChipThemeData(
+      backgroundColor: darkGray200,
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.r),
+        side: BorderSide(color: darkGray200),
+      ),
+    ),
 
     textTheme: TextTheme(
       bodyLarge: TextStyle(color: darkGray900),

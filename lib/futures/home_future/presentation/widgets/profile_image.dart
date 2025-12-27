@@ -3,20 +3,28 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_page/core/utils/theme_extension.dart';
 
 class ProfileImage extends StatelessWidget {
-  const ProfileImage({super.key});
+  final double height;
+  final double width;
+  final Color midColor;
+  const ProfileImage({
+    required this.height,
+    required this.width,
+    required this.midColor,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 200.w,
-      height: 235.h,
+      width: width,
+      height: height,
       child: Stack(
         alignment: Alignment.center,
         children: [
           //* down container
           Container(
-            width: 200.w,
-            height: 190.h,
+            width: width,
+            height: height - 45.h,
             color: context.theme.chipTheme.backgroundColor,
           ),
 
@@ -24,18 +32,18 @@ class ProfileImage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(bottom: 30.0.r),
             child: Container(
-              width: 185.w,
-              height: 205.h,
-              color: context.theme.scaffoldBackgroundColor,
+              width: width - 15.w,
+              height: height - 30.h,
+              color: midColor,
             ),
           ),
 
           //* profile image container
           Padding(
-            padding: EdgeInsets.only(bottom: 30.0.r),
+            padding: EdgeInsets.only(bottom: 40.0.r),
             child: Container(
-              width: 130.w,
-              height: 195.h,
+              width: width - 35.w,
+              height: height - 40.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('lib/assets/images/amin.png'),
