@@ -32,16 +32,18 @@ class ProjectWidget extends StatelessWidget {
                 topLeft: Radius.circular(15.r),
                 topRight: Radius.circular(15.r),
               ),
-              image: DecorationImage(
-                image: NetworkImage("$corsLink${projectEntity.projectPicture}"),
-                fit: BoxFit.cover,
-              ),
             ),
             child: Container(
               margin: EdgeInsets.all(25.r),
               decoration: BoxDecoration(
                 color: context.colorScheme.surface,
                 borderRadius: BorderRadius.circular(10.r),
+                image: DecorationImage(
+                  image: NetworkImage(
+                    "$corsLink${projectEntity.projectPicture}",
+                  ),
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ),

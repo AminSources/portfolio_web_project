@@ -1,5 +1,5 @@
 //* CORS block link
-const String corsLink = "https://api.cors.lol/?url=";
+const String corsLink = "https://corsproxy.io/?url=";
 
 //* contact urls
 List contactUrls = [
@@ -10,6 +10,10 @@ List contactUrls = [
 
 //* github url
 const String githubLink = "https://github.com/AminSources";
+
+//* github source url
+const String githubSourceLink =
+    "https://raw.githubusercontent.com/AminSources/portfolio_web_project/refs/heads/main/lib/assets/images/";
 
 //* api url
 const String apiUrl = "https://retoolapi.dev/uOVHo6/portfolio-web";

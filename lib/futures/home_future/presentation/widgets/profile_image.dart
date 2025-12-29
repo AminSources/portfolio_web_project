@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_page/core/constants/urls.dart';
 import 'package:personal_page/core/utils/theme_extension.dart';
 
 class ProfileImage extends StatelessWidget {
@@ -47,7 +48,7 @@ class ProfileImage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(
-                    'https://api.cors.lol/?url=https://raw.githubusercontent.com/AminSources/portfolio_web_project/refs/heads/main/lib/assets/images/amin.png',
+                    '$githubSourceLink${githubSourceLink}amin.png',
                   ),
                   fit: BoxFit.cover,
                 ),

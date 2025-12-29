@@ -20,7 +20,7 @@ class SkillWidget extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               image: NetworkImage(
-                "${corsLink}https://raw.githubusercontent.com/AminSources/portfolio_web_project/refs/heads/main/lib/assets/images/${iconPath ?? "flutter.png"}",
+                "$corsLink$githubSourceLink${iconPath ?? "flutter.png"}",
               ),
             ),
           ),
