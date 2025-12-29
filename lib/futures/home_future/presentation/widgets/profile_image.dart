@@ -46,7 +46,9 @@ class ProfileImage extends StatelessWidget {
               height: height - 40.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('lib/assets/images/amin.png'),
+                  image: NetworkImage(
+                    'https://api.cors.lol/?url=https://raw.githubusercontent.com/AminSources/portfolio_web_project/refs/heads/main/lib/assets/images/amin.png',
+                  ),
                   fit: BoxFit.cover,
                 ),
               ),

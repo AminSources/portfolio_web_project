@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_page/core/constants/urls.dart';
 import 'package:personal_page/core/utils/theme_extension.dart';
 import 'package:personal_page/core/widgets/txt.dart';
 
@@ -18,8 +19,8 @@ class SkillWidget extends StatelessWidget {
           height: 90.h,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(
-                "lib/assets/images/${iconPath ?? "flutter.png"}",
+              image: NetworkImage(
+                "${corsLink}https://raw.githubusercontent.com/AminSources/portfolio_web_project/refs/heads/main/lib/assets/images/${iconPath ?? "flutter.png"}",
               ),
             ),
           ),

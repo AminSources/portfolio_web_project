@@ -2,9 +2,11 @@ import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_page/core/constants/lists.dart';
+import 'package:personal_page/core/constants/urls.dart';
 import 'package:personal_page/core/utils/theme_extension.dart';
 import 'package:personal_page/core/widgets/txt.dart';
 import 'package:personal_page/futures/home_future/presentation/widgets/contact_info_widget.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactPage extends StatelessWidget {
   const ContactPage({super.key});
@@ -52,6 +54,7 @@ class ContactPage extends StatelessWidget {
                   child: ContactInfoWidget(
                     info: contactInfo[index],
                     icon: contactIcons[index],
+                    url: contactUrls[index],
                   ),
                 ),
               ),
@@ -62,7 +65,10 @@ class ContactPage extends StatelessWidget {
 
             //* github button
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                //? open github page
+                launchUrl(Uri.parse(githubLink));
+              },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
