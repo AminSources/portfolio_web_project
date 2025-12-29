@@ -24,6 +24,20 @@ class AppTheme {
 
     scaffoldBackgroundColor: darkGrayDefault,
 
+    dividerColor: darkGray50,
+    dividerTheme: DividerThemeData(
+      color: darkGray100,
+      thickness: 2.r,
+      space: 2.r,
+    ),
+
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      scrolledUnderElevation: 0,
+      iconTheme: IconThemeData(color: darkGray900),
+    ),
+
     chipTheme: ChipThemeData(
       backgroundColor: darkGray200,
       elevation: 0,

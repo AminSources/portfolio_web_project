@@ -5,6 +5,12 @@ class AppBarActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(onPressed: () {}, icon: Icon(Icons.menu_rounded));
+    return IconButton(
+      onPressed: () {
+        //? open drawer
+        Scaffold.of(context).openEndDrawer();
+      },
+      icon: Icon(Icons.menu_rounded),
+    );
   }
 }

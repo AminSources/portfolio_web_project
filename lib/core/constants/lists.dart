@@ -31,3 +31,5 @@ List contactIcons = [
   FeatherIcons.instagram,
   FeatherIcons.send,
 ];
+
+List drawerItems = ["Home", "About Me", "Skills", "Work", "Contact"];
