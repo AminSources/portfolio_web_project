@@ -1,12 +1,15 @@
 import 'package:feather_icons/feather_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_page/core/constants/urls.dart';
 import 'package:personal_page/core/utils/theme_extension.dart';
 import 'package:personal_page/core/widgets/txt.dart';
+import 'package:personal_page/futures/home_future/domain/entities/project_entity.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectWidget extends StatelessWidget {
-  final int index;
-  const ProjectWidget({super.key, required this.index});
+  final ProjectEntity projectEntity;
+  const ProjectWidget({super.key, required this.projectEntity});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +32,10 @@ class ProjectWidget extends StatelessWidget {
                 topLeft: Radius.circular(15.r),
                 topRight: Radius.circular(15.r),
               ),
+              image: DecorationImage(
+                image: NetworkImage("$corsLink${projectEntity.projectPicture}"),
+                fit: BoxFit.cover,
+              ),
             ),
             child: Container(
               margin: EdgeInsets.all(25.r),
@@ -50,7 +57,7 @@ class ProjectWidget extends StatelessWidget {
                 children: [
                   //* project name
                   txt(
-                    "Project Name ${index + 1}",
+                    projectEntity.projectName ?? "Project Name",
                     color: context.textTheme.bodyLarge!.color,
                     fontWeight: FontWeight.bold,
                     size: 20.sp,
@@ -58,7 +65,7 @@ class ProjectWidget extends StatelessWidget {
 
                   //* project description
                   txt(
-                    "lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                    projectEntity.projectDescription ?? "non-description",
                     color: context.textTheme.bodyMedium!.color,
                     size: 16.sp,
                     textAlign: TextAlign.justify,
@@ -69,10 +76,10 @@ class ProjectWidget extends StatelessWidget {
                     spacing: 10.r,
                     runSpacing: 10.r,
                     children: List.generate(
-                      5,
+                      projectEntity.usedTechnologies!.length,
                       (techIndex) => Chip(
                         label: txt(
-                          "Tech ${techIndex + 1}",
+                          projectEntity.usedTechnologies![techIndex],
                           color: context.textTheme.bodyLarge!.color,
                           size: 14.sp,
                         ),
@@ -81,7 +88,13 @@ class ProjectWidget extends StatelessWidget {
                   ),
 
                   //* view project button
-                  IconButton(onPressed: () {}, icon: Icon(FeatherIcons.github)),
+                  IconButton(
+                    onPressed: () {
+                      //? open github page
+                      launchUrl(Uri.parse(projectEntity.projectLink!));
+                    },
+                    icon: Icon(FeatherIcons.github),
+                  ),
                 ],
               ),
             ),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:personal_page/core/bloc/theme_bloc/theme_bloc.dart';
 import 'package:personal_page/core/configs/app_theme.dart';
 import 'package:personal_page/core/routes/routes.dart';
+import 'package:personal_page/futures/home_future/presentation/bloc/project_bloc.dart';
 import 'package:personal_page/locator.dart';
 
 void main() {
@@ -16,6 +17,9 @@ void main() {
       providers: [
         //* theme bloc provider
         BlocProvider<ThemeBloc>(create: (context) => locator<ThemeBloc>()),
+
+        //* project bloc provider
+        BlocProvider<ProjectBloc>(create: (context) => locator<ProjectBloc>()),
       ],
       child: const MyApp(),
     ),

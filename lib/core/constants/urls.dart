@@ -8,5 +8,8 @@ List contactUrls = [
   "https://t.me/iAmin_com",
 ];
 
-//* github link
+//* github url
 const String githubLink = "https://github.com/AminSources";
+
+//* api url
+const String apiUrl = "https://retoolapi.dev/uOVHo6/portfolio-web";
