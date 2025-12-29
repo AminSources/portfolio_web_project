@@ -33,6 +33,8 @@ class AppTheme {
       ),
     ),
 
+    cardTheme: CardThemeData(color: darkGray100),
+
     textTheme: TextTheme(
       bodyLarge: TextStyle(color: darkGray900),
       bodyMedium: TextStyle(color: darkGray600),
