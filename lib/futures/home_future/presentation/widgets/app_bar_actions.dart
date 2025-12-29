@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_page/core/utils/theme_extension.dart';
 
 class AppBarActions extends StatelessWidget {
   const AppBarActions({super.key});
@@ -10,7 +11,7 @@ class AppBarActions extends StatelessWidget {
         //? open drawer
         Scaffold.of(context).openEndDrawer();
       },
-      icon: Icon(Icons.menu_rounded),
+      icon: Icon(Icons.menu_rounded, color: context.colorScheme.onSurface),
     );
   }
 }

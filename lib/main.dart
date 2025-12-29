@@ -1,10 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:personal_page/core/bloc/theme_bloc/theme_bloc.dart';
 import 'package:personal_page/core/configs/app_theme.dart';
 import 'package:personal_page/core/routes/routes.dart';
+import 'package:personal_page/locator.dart';
 
 void main() {
-  runApp(const MyApp());
+  //? init locator
+  setup();
+
+  //? run app
+  runApp(
+    MultiBlocProvider(
+      providers: [
+        //* theme bloc provider
+        BlocProvider<ThemeBloc>(create: (context) => locator<ThemeBloc>()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -28,6 +43,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: appTheme.lightTheme,
             darkTheme: appTheme.darkTheme,
+            themeMode: context.watch<ThemeBloc>().state.themeMode,
             routes: appRoutes.routes,
             initialRoute: "/",
           );
