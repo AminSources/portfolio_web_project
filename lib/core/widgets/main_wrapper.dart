@@ -4,6 +4,7 @@ import 'package:personal_page/core/utils/theme_extension.dart';
 import 'package:personal_page/core/widgets/txt.dart';
 import 'package:personal_page/futures/home_future/presentation/pages/about_me_page.dart';
 import 'package:personal_page/futures/home_future/presentation/pages/contact_page.dart';
+import 'package:personal_page/futures/home_future/presentation/pages/footer_page.dart';
 import 'package:personal_page/futures/home_future/presentation/pages/home_page.dart';
 import 'package:personal_page/futures/home_future/presentation/pages/skill_page.dart';
 import 'package:personal_page/futures/home_future/presentation/pages/work_page.dart';
@@ -48,6 +49,9 @@ class MainWrapper extends StatelessWidget {
 
               //* contact page
               ContactPage(),
+
+              //* footer page
+              FooterPage(),
             ],
           ),
         ),
