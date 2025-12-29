@@ -39,5 +39,15 @@ class AppTheme {
       bodyLarge: TextStyle(color: darkGray900),
       bodyMedium: TextStyle(color: darkGray600),
     ),
+
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: darkGray900,
+        foregroundColor: darkGrayDefault,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10.r),
+        ),
+      ),
+    ),
   );
 }
