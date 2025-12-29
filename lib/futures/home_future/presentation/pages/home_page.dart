@@ -61,7 +61,11 @@ class HomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //* location
-                IconTextWidget(text: "Tabriz, IRAN", icon: FeatherIcons.mapPin),
+                IconTextWidget(
+                  text: "Tabriz, IRAN",
+                  icon: FeatherIcons.mapPin,
+                  iconColor: context.colorScheme.onSurface,
+                ),
 
                 // space
                 SizedBox(height: 10.r),

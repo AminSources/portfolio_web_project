@@ -7,6 +7,7 @@ import 'package:personal_page/core/widgets/txt.dart';
 import 'package:personal_page/futures/home_future/domain/entities/project_entity.dart';
 import 'package:personal_page/futures/home_future/presentation/bloc/project_bloc.dart';
 import 'package:personal_page/futures/home_future/presentation/bloc/project_status.dart';
+import 'package:personal_page/futures/home_future/presentation/widgets/project_loading_widget.dart';
 import 'package:personal_page/futures/home_future/presentation/widgets/project_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -41,6 +42,7 @@ class _WorkPageState extends State<WorkPage> {
       width: double.infinity,
       height: 860.h,
       color: context.colorScheme.surface,
+      padding: EdgeInsets.symmetric(horizontal: 15.r),
       child: Column(
         children: [
           // space
@@ -76,7 +78,7 @@ class _WorkPageState extends State<WorkPage> {
             builder: (context, state) {
               //? state on loading
               if (state.projectStatus is ProjectLoading) {
-                return CircularProgressIndicator();
+                return ProjectLoadingWidget();
               }
               //? state on error
               else if (state.projectStatus is ProjectError) {
