@@ -47,9 +47,7 @@ class ProfileImage extends StatelessWidget {
               height: height - 40.h,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                  image: NetworkImage(
-                    '$githubSourceLink${githubSourceLink}amin.png',
-                  ),
+                  image: NetworkImage('$corsLink${githubSourceLink}amin.png'),
                   fit: BoxFit.cover,
                 ),
               ),
