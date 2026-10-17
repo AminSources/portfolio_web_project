@@ -71,126 +71,135 @@ class AppTheme {
 
     //* text theme
     textTheme: const TextTheme(
-      // Hero Section
+      // ── تیترهای بزرگ نمایشی ─────────────────────────────
+      // هدر بخش تماس: clamp(54px, 8.5vw, 112px)
       displayLarge: TextStyle(
         fontFamily: _sans,
-        fontSize: 44,
+        fontSize: 96,
         fontWeight: FontWeight.w600,
-        letterSpacing: -1.75,
+        height: 1.08,
+        letterSpacing: -0.07 * 96,
         color: onSurface,
-        height: 1.04,
       ),
+      // تیتر اصلی هیرو: clamp(48px, 6.3vw, 91px)
       displayMedium: TextStyle(
         fontFamily: _sans,
-        fontSize: 72,
+        fontSize: 50,
         fontWeight: FontWeight.w600,
-        letterSpacing: -5.04, // -0.07em
+        height: 1.04,
+        letterSpacing: -0.075 * 50,
         color: onSurface,
-        height: 1.08,
       ),
+      // تیتر h2 بخش‌های About و Works: clamp(40px, 5.3vw, 72px)
       displaySmall: TextStyle(
         fontFamily: _sans,
-        fontSize: 60,
+        fontSize: 46,
         fontWeight: FontWeight.w600,
-        letterSpacing: -4.2, // -0.07em
-        color: onSurface,
         height: 1.08,
+        letterSpacing: -0.07 * 46,
+        color: onSurface,
       ),
 
-      // Section Headings & Lead Text
+      // ── کلمات گرافیکی روی کارت پروژه‌ها ────────────────
+      // .art-word — clamp(30px, 6vw, 80px)
       headlineLarge: TextStyle(
         fontFamily: _sans,
-        fontSize: 48,
-        fontWeight: FontWeight.w600,
-        letterSpacing: -3.36,
-        color: onSurface,
-        height: 1.1,
+        fontSize: 56,
+        fontWeight: FontWeight.w800,
+        letterSpacing: -0.09 * 56,
+        color: Color(0xE6FFF2E0), // rgba(255,242,224,.9)
       ),
+      // .art-word-small — clamp(28px, 4.8vw, 60px)
       headlineMedium: TextStyle(
         fontFamily: _sans,
-        fontSize: 19,
-        fontWeight: FontWeight.w400,
-        letterSpacing: -0.57, // -0.03em
-        color: onSurface,
-        height: 1.65,
+        fontSize: 44,
+        fontWeight: FontWeight.w800,
+        letterSpacing: -0.09 * 44,
+        color: Color(0xE6FFF2E0),
       ),
+      // پاراگراف معرفی .lead — 19px
       headlineSmall: TextStyle(
         fontFamily: _sans,
         fontSize: 16,
-        fontWeight: FontWeight.w600,
-        letterSpacing: -0.64, // -0.04em
+        fontWeight: FontWeight.w400,
+        height: 1.65,
+        letterSpacing: -0.03 * 19,
         color: onSurface,
-        height: 1.4,
       ),
 
-      // Body & Paragraphs
+      // ── عنوان‌های میانی ─────────────────────────────────
+      // .project-info h3 — 16px
+      titleLarge: TextStyle(
+        fontFamily: _sans,
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        letterSpacing: -0.04 * 16,
+        color: onSurface,
+      ),
+      // .principle h3 — 15px
+      titleMedium: TextStyle(
+        fontFamily: _sans,
+        fontSize: 15,
+        fontWeight: FontWeight.w600,
+        color: onSurface,
+      ),
+      // .nav-link — 12px
+      titleSmall: TextStyle(
+        fontFamily: _sans,
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        color: Color(0xFFBCB2A8),
+      ),
+
+      // ── متن بدنه ────────────────────────────────────────
+      // .hero-copy — 13px
       bodyLarge: TextStyle(
         fontFamily: _sans,
         fontSize: 13,
         fontWeight: FontWeight.w400,
-        color: heroCopy,
         height: 1.9,
+        color: heroCopy,
       ),
+      // .about-body p و .contact-copy — 12px
       bodyMedium: TextStyle(
         fontFamily: _sans,
         fontSize: 12,
         fontWeight: FontWeight.w400,
-        color: muted,
         height: 2.0,
+        color: muted,
       ),
+      // پاراگراف‌های 11px (پروژه‌ها، اصول، معرفی‌ها)
       bodySmall: TextStyle(
         fontFamily: _sans,
         fontSize: 11,
         fontWeight: FontWeight.w400,
+        height: 1.8,
         color: muted,
-        height: 1.7,
       ),
 
-      // Labels, Eyebrows & Meta (Mono Font)
+      // ── برچسب‌ها ────────────────────────────────────────
+      // دکمه‌ها و برند — 11px
       labelLarge: TextStyle(
-        fontFamily: _mono,
-        fontSize: 11,
-        fontWeight: FontWeight.w700,
-        letterSpacing: 1.43, // 0.13em
-        color: primary,
-      ),
-      labelMedium: TextStyle(
-        fontFamily: _mono,
-        fontSize: 9,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 1.17, // 0.13em
-        color: primary,
-      ),
-      labelSmall: TextStyle(
-        fontFamily: _mono,
-        fontSize: 8,
-        fontWeight: FontWeight.w400,
-        letterSpacing: 1.04, // 0.13em
-        color: dim,
-      ),
-
-      // Specialized Styles (Mapped to closest M3 tokens)
-      titleLarge: TextStyle(
-        fontFamily: _serif,
-        fontStyle: FontStyle.italic,
-        fontWeight: FontWeight.w400,
-        fontSize: 48,
-        letterSpacing: -3.12, // -0.065em
-        color: primary,
-      ),
-      titleMedium: TextStyle(
         fontFamily: _sans,
         fontSize: 12,
-        fontWeight: FontWeight.w400,
-        color: navLink,
-        height: 1.5,
+        fontWeight: FontWeight.w700,
+        color: onSurface,
       ),
-      titleSmall: TextStyle(
-        fontFamily: _sans,
+      // برچسب‌های مونو 9px با فاصله‌گذاری 0.13em
+      labelMedium: TextStyle(
+        fontFamily: _mono,
+        fontSize: 11,
+        fontWeight: FontWeight.w400,
+        letterSpacing: 0.13 * 9,
+        color: primary,
+      ),
+      // ریزبرچسب‌های مونو 8px با فاصله‌گذاری 0.13em
+      labelSmall: TextStyle(
+        fontFamily: _mono,
         fontSize: 10,
         fontWeight: FontWeight.w400,
-        color: skillTag,
-        letterSpacing: 0.5,
+        letterSpacing: 0.13 * 8,
+        color: dim,
       ),
     ),
 

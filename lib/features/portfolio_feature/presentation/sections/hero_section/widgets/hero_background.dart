@@ -17,7 +17,7 @@ class HeroBackground extends StatelessWidget {
           //* background image
           Positioned.fill(
             child: Image.asset(
-              "lib/assets/images/black-hole.jpg",
+              "lib/assets/images/black_hole.webp",
               fit: BoxFit.cover,
               alignment: Alignment.center,
             ),

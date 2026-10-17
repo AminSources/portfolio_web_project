@@ -20,7 +20,12 @@ class CustomAppBar extends StatelessWidget {
                 Logo(),
 
                 //* menu icon button
-                InkWell(onTap: () {}, child: Icon(Icons.menu_rounded)),
+                InkWell(
+                  onTap: () {
+                    Scaffold.of(context).openDrawer();
+                  },
+                  child: Icon(Icons.menu_rounded),
+                ),
               ],
             ),
           ),

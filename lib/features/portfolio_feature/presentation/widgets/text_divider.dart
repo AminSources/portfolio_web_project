@@ -10,7 +10,7 @@ class TextDivider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = textStyle ?? context.textTheme.labelLarge;
+    final style = textStyle ?? context.textTheme.labelMedium;
 
     return Row(
       spacing: 10,

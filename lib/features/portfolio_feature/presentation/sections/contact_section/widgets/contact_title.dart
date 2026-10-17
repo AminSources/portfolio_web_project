@@ -1,30 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_web_project/core/extensions/theme_extension.dart';
 
-class HeroTitle extends StatelessWidget {
+class ContactTitle extends StatelessWidget {
   const new({super.key});
 
   @override
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: "Building digital",
-        style: context.textTheme.displayLarge,
+        text: "Let's make\nsomething",
+        style: context.textTheme.displaySmall,
         children: [
-          TextSpan(text: "\nworlds"),
           TextSpan(
-            text: " beyond",
+            text: "\nmatter.",
             style: TextStyle(
               color: context.colorScheme.primary,
               fontFamily: "Georgia",
+              fontWeight: FontWeight.w500,
               fontStyle: FontStyle.italic,
-              fontWeight: .w500,
             ),
-          ),
-          TextSpan(text: "\nthe ordinary"),
-          TextSpan(
-            text: ".",
-            style: TextStyle(color: context.colorScheme.primary),
           ),
         ],
       ),
