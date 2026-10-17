@@ -74,7 +74,7 @@ class AppTheme {
       // Hero Section
       displayLarge: TextStyle(
         fontFamily: _sans,
-        fontSize: 50,
+        fontSize: 44,
         fontWeight: FontWeight.w600,
         letterSpacing: -1.75,
         color: onSurface,
