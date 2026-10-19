@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:portfolio_web_project/core/extensions/theme_extension.dart';
 import 'package:portfolio_web_project/core/theme/app_theme.dart';
 import 'package:portfolio_web_project/core/widgets/txt.dart';
+import 'package:portfolio_web_project/features/portfolio_feature/presentation/bloc/works_bloc.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/works_section/widgets/works_grid.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/works_section/widgets/works_title.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/widgets/section_kicker.dart';
+import 'package:portfolio_web_project/locator.dart';
 
 class WorksSection extends StatelessWidget {
   const new({super.key});
@@ -35,7 +38,7 @@ class WorksSection extends StatelessWidget {
           ),
 
           //* works grid
-          WorksGrid(),
+          BlocProvider(create: (_) => sl<WorksBloc>(), child: WorksGrid()),
           SizedBox(height: 20),
 
           //* footer section

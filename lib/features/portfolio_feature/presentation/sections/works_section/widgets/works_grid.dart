@@ -1,37 +1,66 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:portfolio_web_project/core/widgets/txt.dart';
+import 'package:portfolio_web_project/features/portfolio_feature/presentation/bloc/works_bloc.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/works_section/widgets/work_item.dart';
 
-class WorksGrid extends StatelessWidget {
+class WorksGrid extends StatefulWidget {
   const new({super.key});
 
   @override
+  State<WorksGrid> createState() => _WorksGridState();
+}
+
+class _WorksGridState extends State<WorksGrid> {
+  @override
+  void initState() {
+    super.initState();
+
+    context.read<WorksBloc>().add(LoadWorkEvent());
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Wrap(
-      children: List.generate(
-        3,
-        (index) => WorkItem(
-          imagePath: "",
-          count: (index + 1).toString().padLeft(2, "0"),
-          shortName: ["hamsafar", "portfolio web", "development"][index],
-          usedTechnologies: [
-            "mobile - flutter",
-            "web - flutter",
-            "mobile - flutter",
-          ][index],
-          year: 2026,
-          title: [
-            "Hamsafar-Coordinate travel",
-            "Aminsources-Portfolio web",
-            "Unknown-A project",
-          ][index],
-          description: [
-            "Hamsafar is a Flutter application designed to simplify planning and coordinating short trips with friends.",
-            "Aminsources web is an responsive and clean ui portfolio web",
-            "Unknown A project Unknown-A project Unknown-A project Unknown-A project",
-          ][index],
-          workUrl: "",
-        ),
-      ),
+    return BlocBuilder<WorksBloc, WorksState>(
+      builder: (context, state) {
+        //? on idle state
+        if (state is WorksInitial) {
+          return SizedBox.expand();
+        }
+
+        //? on loading state
+        if (state is WorksLoading) {
+          return CircularProgressIndicator();
+        }
+
+        //? on failure state
+        if (state is WorksFailure) {
+          return Center(child: txt(state.message));
+        }
+
+        //? on success state
+        if (state is WorksSuccess) {
+          final works = state.works;
+
+          return Wrap(
+            children: List.generate(
+              works.length,
+              (index) => WorkItem(
+                imagePath: works[index].titleImagePath,
+                count: (index + 1).toString().padLeft(2, "0"),
+                shortName: works[index].shortName,
+                usedTechnologies: works[index].usedTechnologies,
+                year: works[index].year,
+                title: works[index].title,
+                description: works[index].description,
+                workUrl: works[index].projectUrl,
+              ),
+            ),
+          );
+        }
+
+        return SizedBox.shrink();
+      },
     );
   }
 }

@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_web_project/core/extensions/theme_extension.dart';
 import 'package:portfolio_web_project/core/widgets/txt.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/widgets/outlined_icon_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WorkItem extends StatelessWidget {
   final String imagePath;
   final String count;
   final String shortName;
   final String usedTechnologies;
-  final int year;
+  final String year;
   final String title;
   final String description;
   final String workUrl;
@@ -38,8 +39,8 @@ class WorkItem extends StatelessWidget {
             child: Stack(
               fit: StackFit.expand,
               children: [
-                //* image placeholder
-                Placeholder(),
+                //* image
+                Image.asset(imagePath, fit: .cover),
 
                 Padding(
                   padding: const EdgeInsets.all(10),
@@ -77,7 +78,10 @@ class WorkItem extends StatelessWidget {
               ),
 
               OutlinedIconButton(
-                onTap: () {},
+                onTap: () {
+                  //? open work page
+                  launchUrl(Uri.parse(workUrl));
+                },
                 icon: Icons.arrow_outward_rounded,
               ),
             ],

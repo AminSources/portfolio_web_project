@@ -1,0 +1,20 @@
+[
+    {
+        "short_name" : "hamsafar",
+        "used_technologies" : "mobile - flutter",
+        "year" : "2026",
+        "title" : "Hamsafar-Coordinate travel",
+        "description" : "Hamsafar is a Flutter application designed to simplify planning and coordinating short trips with friends.",
+        "title_image_path" : "lib/assets/images/hamsafar.webp",
+        "project_url" : "https://github.com/aminsources/hamsafar"
+    },
+    {
+        "short_name" : "portfolio web",
+        "used_technologies" : "web - flutter",
+        "year" : "2026",
+        "title" : "Aminsources-Portfolio web",
+        "description" : "Aminsources web is an responsive and clean ui portfolio web",
+        "title_image_path" : "lib/assets/images/portfolio.webp",
+        "project_url" : "https://github.com/aminsources/portfolio_web_project"
+    }
+]
