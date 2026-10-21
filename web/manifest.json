@@ -1,32 +1,22 @@
 {
-    "name": "portfolio_web_project",
-    "short_name": "portfolio_web_project",
+    "name": "Mohammad Amin Farshbaf",
+    "short_name": "Mohammad Amin Farshbaf | Software Developer",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "A responsive website serving as a portfolio and resume for Mohammad Amin Farshbaf",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
         {
             "src": "icons/Icon-192.png",
             "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/Icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/Icon-maskable-192.png",
-            "sizes": "192x192",
             "type": "image/png",
             "purpose": "maskable"
         },
         {
-            "src": "icons/Icon-maskable-512.png",
+            "src": "icons/Icon-512.png",
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
