@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_web_project/core/extensions/theme_extension.dart';
-import 'package:portfolio_web_project/core/theme/app_theme.dart';
+import 'package:portfolio_web_project/core/theme/app_colors.dart';
 import 'package:portfolio_web_project/core/widgets/txt.dart';
 
 class HeroSideLabel extends StatelessWidget {
@@ -23,7 +23,7 @@ class HeroSideLabel extends StatelessWidget {
           txt(
             "THE EVENT HORIZON",
             style: context.textTheme.labelSmall,
-            color: AppTheme.muted,
+            color: AppColors.muted,
           ),
 
           Container(width: 5, height: 1, color: context.colorScheme.primary),

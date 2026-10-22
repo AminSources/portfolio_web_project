@@ -8,23 +8,17 @@ class HeroTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: "Building digital",
+        text: "Mohammad Amin",
         style: context.textTheme.displayMedium,
         children: [
-          TextSpan(text: "\nworlds"),
           TextSpan(
-            text: " beyond",
+            text: " Farshbaf.",
             style: TextStyle(
               color: context.colorScheme.primary,
-              fontFamily: "Georgia",
+              fontFamily: context.serif,
               fontStyle: FontStyle.italic,
               fontWeight: .w500,
             ),
-          ),
-          TextSpan(text: "\nthe ordinary"),
-          TextSpan(
-            text: ".",
-            style: TextStyle(color: context.colorScheme.primary),
           ),
         ],
       ),

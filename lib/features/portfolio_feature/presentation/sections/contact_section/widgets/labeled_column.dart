@@ -11,10 +11,11 @@ class LabeledColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: .start,
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 10,
       children: [
         txt(title.toUpperCase(), style: context.textTheme.labelSmall),
-
         child,
       ],
     );

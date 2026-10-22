@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_web_project/core/extensions/theme_extension.dart';
-import 'package:portfolio_web_project/core/theme/app_theme.dart';
+import 'package:portfolio_web_project/core/theme/app_typography.dart';
 import 'package:portfolio_web_project/core/widgets/txt.dart';
 
 class Logo extends StatelessWidget {
@@ -35,7 +35,7 @@ class Logo extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: "AMIN",
-            style: AppTheme.brandStyle,
+            style: AppTypography.brandStyle,
             children: [
               TextSpan(
                 text: " / DEVELOPER",

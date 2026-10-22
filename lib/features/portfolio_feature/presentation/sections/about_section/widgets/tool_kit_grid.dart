@@ -8,6 +8,7 @@ class ToolKitGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Wrap(
       spacing: 10,
+      runSpacing: 10,
       children: List.generate(
         5,
         (index) => ToolKitChip(

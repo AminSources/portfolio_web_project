@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_web_project/core/extensions/theme_extension.dart';
 import 'package:portfolio_web_project/core/keys/navigation_keys.dart';
 import 'package:portfolio_web_project/core/widgets/txt.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/widgets/logo.dart';
@@ -35,7 +36,10 @@ class FooterSection extends StatelessWidget {
               ),
               SizedBox(height: 20),
 
-              txt("© 2026 Mohammad Amin Farshbaf. All rights reserved."),
+              txt(
+                "© 2026 Mohammad Amin Farshbaf. All rights reserved.",
+                style: context.textTheme.bodySmall,
+              ),
             ],
           ),
         ),

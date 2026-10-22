@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class AboutTitleImage extends StatelessWidget {
-  const new({super.key});
+  final double? width;
+
+  const new({super.key, this.width});
 
   @override
   Widget build(BuildContext context) {
     return Image.asset(
       "lib/assets/images/personal_picture.webp",
-      width: double.infinity,
+      width: width,
       fit: BoxFit.cover,
     );
   }

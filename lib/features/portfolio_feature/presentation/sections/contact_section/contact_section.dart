@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:portfolio_web_project/core/extensions/theme_extension.dart';
+import 'package:portfolio_web_project/core/responsive/app_breakpoints.dart';
 import 'package:portfolio_web_project/core/widgets/txt.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/contact_section/widgets/contact_grid.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/contact_section/widgets/contact_title.dart';
@@ -10,52 +12,77 @@ class ContactSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        crossAxisAlignment: .start,
-        children: [
-          //* header section
-          SectionKicker(
-            pageCount: "04",
-            pageName: "contact",
-            pageBio: "HAVE SOMETHING IN MIND?",
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Padding(
+          padding: EdgeInsets.all(20.w),
+          child: Column(
+            crossAxisAlignment: .start,
+            children: [
+              //* header section
+              SectionKicker(
+                pageCount: "04",
+                pageName: "contact",
+                pageBio: "HAVE SOMETHING IN MIND?",
+              ),
+              SizedBox(height: 30),
+
+              txt("✳ OPEN TO GOOD IDEAS", style: context.textTheme.labelSmall),
+              SizedBox(height: 20),
+
+              //* title section
+              SizedBox(
+                width: _contactTitle(constraints.maxWidth),
+                child: ContactTitle(),
+              ),
+              SizedBox(height: 20),
+
+              txt(
+                "Have a project, an opportunity, or an interesting idea? My inbox is open.",
+                style: context.textTheme.bodyMedium,
+              ),
+              SizedBox(height: 20),
+
+              //* button section
+              SizedBox(
+                height: 40,
+                child: ElevatedButton.icon(
+                  onPressed: () {},
+                  label: txt(
+                    "Start a conversation",
+                    color: context.colorScheme.onPrimary,
+                    style: context.textTheme.labelLarge,
+                  ),
+                  icon: Icon(Icons.arrow_outward_rounded),
+                  iconAlignment: IconAlignment.end,
+                ),
+              ),
+              SizedBox(height: 30),
+
+              Divider(),
+
+              //* contact section
+              ContactGrid(),
+              SizedBox(height: 30),
+
+              Divider(),
+            ],
           ),
-          SizedBox(height: 30),
-
-          txt("✳ OPEN TO GOOD IDEAS", style: context.textTheme.labelSmall),
-          SizedBox(height: 20),
-
-          //* title section
-          ContactTitle(),
-          SizedBox(height: 20),
-
-          txt(
-            "Have a project, an opportunity, or an interesting idea? My inbox is open.",
-            style: context.textTheme.bodyMedium,
-          ),
-          SizedBox(height: 20),
-
-          //* button section
-          ElevatedButton.icon(
-            onPressed: () {},
-            label: txt(
-              "Start a conversation",
-              color: context.colorScheme.onPrimary,
-              style: context.textTheme.labelLarge,
-            ),
-            icon: Icon(Icons.arrow_outward_rounded),
-            iconAlignment: IconAlignment.end,
-          ),
-          SizedBox(height: 30),
-
-          Divider(),
-
-          //* contact section
-          ContactGrid(),
-          SizedBox(height: 30),
-        ],
-      ),
+        );
+      },
     );
   }
+}
+
+double _contactTitle(double width) {
+  if (width < AppBreakpoints.mobile) {
+    return 250.w;
+  }
+  if (width < AppBreakpoints.tablet && width >= AppBreakpoints.mobile) {
+    return 200.w;
+  }
+  if (width >= AppBreakpoints.tablet) {
+    return 150.w;
+  }
+  return 250.w;
 }

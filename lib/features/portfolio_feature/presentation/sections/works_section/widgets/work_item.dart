@@ -13,6 +13,7 @@ class WorkItem extends StatelessWidget {
   final String title;
   final String description;
   final String workUrl;
+  final double? width;
 
   const new({
     super.key,
@@ -24,69 +25,73 @@ class WorkItem extends StatelessWidget {
     required this.title,
     required this.description,
     required this.workUrl,
+    this.width,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 20),
-      child: Column(
-        children: [
-          //* image section
-          SizedBox(
-            width: double.infinity,
-            height: 200,
-            child: Stack(
-              fit: StackFit.expand,
-              children: [
-                //* image
-                Image.asset(imagePath, fit: .cover),
+    return SizedBox(
+      width: width,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: Column(
+          children: [
+            //* image section
+            SizedBox(
+              width: double.infinity,
+              height: 200,
+              child: Stack(
+                fit: StackFit.expand,
+                children: [
+                  //* image
+                  Image.asset(imagePath, fit: .cover),
 
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: txt(
-                    "$count / ${shortName.toUpperCase()}",
-                    style: context.textTheme.labelSmall,
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: txt(
+                      "$count / ${shortName.toUpperCase()}",
+                      style: context.textTheme.labelSmall,
+                    ),
                   ),
+                ],
+              ),
+            ),
+            SizedBox(height: 10),
+
+            Row(
+              spacing: 10,
+              mainAxisAlignment: .spaceBetween,
+              crossAxisAlignment: .end,
+              children: [
+                Expanded(
+                  child: Column(
+                    spacing: 5,
+                    crossAxisAlignment: .start,
+                    children: [
+                      //* wokr info
+                      txt(
+                        "${usedTechnologies.toUpperCase()} · $year",
+                        style: context.textTheme.labelSmall,
+                      ),
+
+                      txt(title, style: context.textTheme.titleLarge),
+
+                      txt(description, style: context.textTheme.bodyMedium),
+                    ],
+                  ),
+                ),
+
+                OutlinedIconButton(
+                  onTap: () {
+                    //? open work page
+                    launchUrl(Uri.parse(workUrl));
+                  },
+                  icon: Icons.arrow_outward_rounded,
                 ),
               ],
             ),
-          ),
-          SizedBox(height: 10),
-
-          Row(
-            spacing: 10,
-            mainAxisAlignment: .spaceBetween,
-            crossAxisAlignment: .end,
-            children: [
-              Expanded(
-                child: Column(
-                  spacing: 5,
-                  crossAxisAlignment: .start,
-                  children: [
-                    //* wokr info
-                    txt(
-                      "${usedTechnologies.toUpperCase()} · $year",
-                      style: context.textTheme.labelSmall,
-                    ),
-
-                    txt(title, style: context.textTheme.titleLarge),
-
-                    txt(description, style: context.textTheme.bodySmall),
-                  ],
-                ),
-              ),
-
-              OutlinedIconButton(
-                onTap: () {
-                  //? open work page
-                  launchUrl(Uri.parse(workUrl));
-                },
-                icon: Icons.arrow_outward_rounded,
-              ),
-            ],
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -11,17 +11,17 @@ class AboutTitle extends StatelessWidget {
         text: "Curious by",
         style: context.textTheme.displaySmall,
         children: [
-          TextSpan(text: "\nnature."),
+          TextSpan(text: " nature."),
           TextSpan(
             text: " Builder",
             style: TextStyle(
               color: context.colorScheme.primary,
-              fontFamily: "Georgia",
+              fontFamily: context.serif,
               fontWeight: FontWeight.w500,
               fontStyle: FontStyle.italic,
             ),
           ),
-          TextSpan(text: "\nby choice."),
+          TextSpan(text: " by choice."),
         ],
       ),
     );

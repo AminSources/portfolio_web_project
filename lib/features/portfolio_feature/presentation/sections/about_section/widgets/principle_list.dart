@@ -6,10 +6,13 @@ class PrincipleList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return ListView.separated(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 3,
+      separatorBuilder: (context, index) {
+        return Divider();
+      },
       itemBuilder: ((context, index) => PrincipleItem(
         count: (index + 1).toString().padLeft(2, "0"),
         title: ["Clarity first", "Built to adapt", "Always exploring"][index],
