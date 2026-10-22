@@ -24,7 +24,7 @@ class HeroSection extends StatelessWidget {
               spacing: 25,
               children: [
                 SizedBox(
-                  width: getHeroTitleWidth(constraints.maxWidth),
+                  width: _getHeroTitleWidth(constraints.maxWidth),
                   child: Column(
                     mainAxisAlignment: .center,
                     crossAxisAlignment: .start,
@@ -32,7 +32,7 @@ class HeroSection extends StatelessWidget {
                       Spacer(),
 
                       //* section title
-                      TextDivider(text: "INDEPENDENT DEVELOPER"),
+                      TextDivider(text: "SOFTWARE DEVELOPER"),
                       SizedBox(height: 15),
 
                       HeroTitle(),
@@ -40,7 +40,7 @@ class HeroSection extends StatelessWidget {
 
                       //* section subtitle
                       txt(
-                        "I turn complex ideas int thoughtful digital experiences - with clean code, purposeful design, and a little cosmic curiousity.",
+                        "I turn ideas into cross-platform apps with Dart & Flutter - clean architecture, maintainable code, and details that last.",
                         style: context.textTheme.bodyLarge,
                         textAlign: TextAlign.justify,
                       ),
@@ -71,12 +71,12 @@ class HeroSection extends StatelessWidget {
   }
 }
 
-double getHeroTitleWidth(double width) {
+double _getHeroTitleWidth(double width) {
   if (width < AppBreakpoints.mobile) {
     return 260.w;
   }
   if (width >= AppBreakpoints.mobile && width < AppBreakpoints.tablet) {
-    return 180.w;
+    return 215.w;
   }
   if (width >= AppBreakpoints.tablet) {
     return 120.w;

@@ -8,12 +8,11 @@ class AboutTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: "Curious by",
+        text: "Code with intent.",
         style: context.textTheme.displaySmall,
         children: [
-          TextSpan(text: " nature."),
           TextSpan(
-            text: " Builder",
+            text: " Ship",
             style: TextStyle(
               color: context.colorScheme.primary,
               fontFamily: context.serif,
@@ -21,7 +20,7 @@ class AboutTitle extends StatelessWidget {
               fontStyle: FontStyle.italic,
             ),
           ),
-          TextSpan(text: " by choice."),
+          TextSpan(text: " with care."),
         ],
       ),
     );

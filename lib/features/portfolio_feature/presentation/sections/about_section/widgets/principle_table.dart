@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_web_project/core/constants/app_lists.dart';
 import 'package:portfolio_web_project/core/extensions/theme_extension.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/about_section/widgets/principle_item.dart';
 
@@ -11,10 +12,10 @@ class PrincipleTable extends StatelessWidget {
 
     return Row(
       children: List.generate(
-        3,
+        AppLists.principleTitles.length,
         (index) => Expanded(
           child: Container(
-            height: 150,
+            height: 200,
             decoration: BoxDecoration(
               border: Border(
                 top: borderSide,
@@ -27,16 +28,8 @@ class PrincipleTable extends StatelessWidget {
               padding: EdgeInsets.only(left: 20, right: 20),
               child: PrincipleItem(
                 count: (index + 1).toString().padLeft(2, "0"),
-                title: [
-                  "Clarity first",
-                  "Built to adapt",
-                  "Always exploring",
-                ][index],
-                subtitle: [
-                  "Less noise, more meaning. Every element earns its place.",
-                  "Responsive, accessible experiences for real-world screens.",
-                  "Stay curious, learn continuously, and keep moving forward.",
-                ][index],
+                title: AppLists.principleTitles[index],
+                subtitle: AppLists.principleSubtitles[index],
               ),
             ),
           ),

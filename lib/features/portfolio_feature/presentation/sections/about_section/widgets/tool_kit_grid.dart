@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_web_project/core/constants/app_lists.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/about_section/widgets/tool_kit_chip.dart';
 
 class ToolKitGrid extends StatelessWidget {
@@ -10,10 +11,8 @@ class ToolKitGrid extends StatelessWidget {
       spacing: 10,
       runSpacing: 10,
       children: List.generate(
-        5,
-        (index) => ToolKitChip(
-          label: ["Flutter", "Dart", "Python", "Git", "UI/UX"][index],
-        ),
+        AppLists.toolkitList.length,
+        (index) => ToolKitChip(label: AppLists.toolkitList[index]),
       ),
     );
   }

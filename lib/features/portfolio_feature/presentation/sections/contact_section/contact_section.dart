@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:portfolio_web_project/core/constants/app_urls.dart';
 import 'package:portfolio_web_project/core/extensions/theme_extension.dart';
 import 'package:portfolio_web_project/core/responsive/app_breakpoints.dart';
 import 'package:portfolio_web_project/core/widgets/txt.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/contact_section/widgets/contact_grid.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/contact_section/widgets/contact_title.dart';
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/widgets/section_kicker.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactSection extends StatelessWidget {
   const new({super.key});
@@ -47,7 +49,9 @@ class ContactSection extends StatelessWidget {
               SizedBox(
                 height: 40,
                 child: ElevatedButton.icon(
-                  onPressed: () {},
+                  onPressed: () {
+                    launchUrl(Uri.parse(AppUrls.telegramUrl));
+                  },
                   label: txt(
                     "Start a conversation",
                     color: context.colorScheme.onPrimary,

@@ -66,7 +66,7 @@ Widget _aboutTitle(BuildContext context, double width) {
         txt("WHO I AM", style: context.textTheme.labelMedium),
         SizedBox(height: 20),
 
-        AboutTitle(),
+        SizedBox(width: _getAboutTitleWidth(width), child: AboutTitle()),
         SizedBox(height: 20),
 
         //* intro section
@@ -107,7 +107,7 @@ Widget _aboutTitle(BuildContext context, double width) {
               txt("WHO I AM", style: context.textTheme.labelMedium),
               SizedBox(height: 20),
 
-              AboutTitle(),
+              SizedBox(width: _getAboutTitleWidth(width), child: AboutTitle()),
               SizedBox(height: 20),
             ],
           ),
@@ -122,14 +122,14 @@ Widget _aboutTitle(BuildContext context, double width) {
 
               //* intro section
               txt(
-                "I’m Amin, a developer who enjoys making the digital feel simple, useful, and memorable.",
+                "I’m Amin, I build Flutter apps and Python tools, and I care about the small decisions that make software hold up under real use.",
                 style: context.textTheme.headlineSmall,
                 textAlign: TextAlign.justify,
               ),
               SizedBox(height: 20),
 
               txt(
-                "I work where logic meets visual craft: building responsive interfaces, exploring new technologies, and refining the small details that make a product feel right. I believe good work should be clear in purpose and precise in execution.",
+                "Most of my work lives between two worlds: Flutter for interfaces that need to feel native and fast, and Python for the logic, tooling, and automation behind them. I like the part of the job that nobody sees — the state management that holds up, the API that doesn't surprise you, the widget tree that stays readable six months later. Good software isn't clever. It's clear enough that the next person can change it without fear.",
                 style: context.textTheme.bodyMedium,
                 textAlign: TextAlign.justify,
               ),
@@ -149,4 +149,17 @@ Widget _aboutTitle(BuildContext context, double width) {
       ],
     );
   }
+}
+
+double _getAboutTitleWidth(double width) {
+  if (width < AppBreakpoints.mobile) {
+    return 260.w;
+  }
+  if (width >= AppBreakpoints.mobile && width < AppBreakpoints.tablet) {
+    return 160.w;
+  }
+  if (width >= AppBreakpoints.tablet) {
+    return 130.w;
+  }
+  return 250.w;
 }
