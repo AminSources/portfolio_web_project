@@ -13,6 +13,10 @@ class PortfolioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //TODO remove latter
+    debugPrint("width: ${MediaQuery.sizeOf(context).width}");
+    debugPrint("height: ${MediaQuery.sizeOf(context).height}");
+
     return Scaffold(
       drawer: DrawerBody(),
       drawerScrimColor: Colors.transparent,

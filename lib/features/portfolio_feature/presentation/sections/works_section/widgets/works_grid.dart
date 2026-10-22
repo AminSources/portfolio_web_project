@@ -5,7 +5,9 @@ import 'package:portfolio_web_project/features/portfolio_feature/presentation/bl
 import 'package:portfolio_web_project/features/portfolio_feature/presentation/sections/works_section/widgets/work_item.dart';
 
 class WorksGrid extends StatefulWidget {
-  const new({super.key});
+  final double workItemWidth;
+
+  const new({super.key, required this.workItemWidth});
 
   @override
   State<WorksGrid> createState() => _WorksGridState();
@@ -42,18 +44,24 @@ class _WorksGridState extends State<WorksGrid> {
         if (state is WorksSuccess) {
           final works = state.works;
 
-          return Wrap(
-            children: List.generate(
-              works.length,
-              (index) => WorkItem(
-                imagePath: works[index].titleImagePath,
-                count: (index + 1).toString().padLeft(2, "0"),
-                shortName: works[index].shortName,
-                usedTechnologies: works[index].usedTechnologies,
-                year: works[index].year,
-                title: works[index].title,
-                description: works[index].description,
-                workUrl: works[index].projectUrl,
+          return SizedBox(
+            width: double.infinity,
+            child: Wrap(
+              alignment: .spaceBetween,
+              runSpacing: 20,
+              children: List.generate(
+                works.length,
+                (index) => WorkItem(
+                  imagePath: works[index].titleImagePath,
+                  count: (index + 1).toString().padLeft(2, "0"),
+                  shortName: works[index].shortName,
+                  usedTechnologies: works[index].usedTechnologies,
+                  year: works[index].year,
+                  title: works[index].title,
+                  description: works[index].description,
+                  workUrl: works[index].projectUrl,
+                  width: widget.workItemWidth,
+                ),
               ),
             ),
           );

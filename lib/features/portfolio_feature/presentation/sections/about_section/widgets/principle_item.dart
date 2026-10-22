@@ -18,6 +18,7 @@ class PrincipleItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: .start,
+      mainAxisAlignment: .center,
       children: [
         SizedBox(height: 10),
 
@@ -25,14 +26,10 @@ class PrincipleItem extends StatelessWidget {
         SizedBox(height: 10),
 
         txt(title, style: context.textTheme.titleMedium),
-
-        SizedBox(
-          width: MediaQuery.sizeOf(context).width * 0.5,
-          child: txt(subtitle, style: context.textTheme.bodySmall),
-        ),
         SizedBox(height: 10),
 
-        Divider(),
+        SizedBox(child: txt(subtitle, style: context.textTheme.bodySmall)),
+        SizedBox(height: 10),
       ],
     );
   }

@@ -10,57 +10,73 @@ class ContactGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 10,
-      runSpacing: 10,
-      children: [
-        LabeledColumn(
-          title: "email",
-          child: InkWell(
-            onTap: () => launchUrl(Uri.parse(AppUrls.emailUrl)),
-            child: txt("helloamin.com@gmail.com"),
+    return SizedBox(
+      width: double.infinity,
+      child: Wrap(
+        alignment: WrapAlignment.spaceBetween,
+        spacing: 10,
+        runSpacing: 10,
+        children: [
+          LabeledColumn(
+            title: "email",
+            child: InkWell(
+              onTap: () => launchUrl(Uri.parse(AppUrls.emailUrl)),
+              child: txt(
+                "helloamin.com@gmail.com",
+                style: context.textTheme.bodyLarge,
+              ),
+            ),
           ),
-        ),
 
-        LabeledColumn(
-          title: "elsewhere",
-          child: Row(
-            spacing: 10,
-            children: List.generate(
-              3,
-              (index) => InkWell(
-                onTap: () => launchUrl(
-                  Uri.parse(
-                    [
-                      AppUrls.githubUrl,
-                      AppUrls.instagramUrl,
-                      AppUrls.telegramUrl,
-                    ][index],
-                  ),
-                ),
-                child: Row(
-                  children: [
-                    txt(["Github", "Instagram", "Telegram"][index]),
-                    Icon(
-                      Icons.arrow_outward_rounded,
-                      size: context.textTheme.labelMedium!.fontSize,
-                      color: context.textTheme.labelMedium!.color,
+          LabeledColumn(
+            title: "elsewhere",
+            child: Row(
+              mainAxisSize: .min,
+              spacing: 10,
+              children: List.generate(
+                3,
+                (index) => InkWell(
+                  onTap: () => launchUrl(
+                    Uri.parse(
+                      [
+                        AppUrls.githubUrl,
+                        AppUrls.instagramUrl,
+                        AppUrls.telegramUrl,
+                      ][index],
                     ),
-                  ],
+                  ),
+                  child: Row(
+                    children: [
+                      txt(
+                        ["Github", "Instagram", "Telegram"][index],
+                        style: context.textTheme.bodyLarge,
+                      ),
+                      Icon(
+                        Icons.arrow_outward_rounded,
+                        size: context.textTheme.labelMedium!.fontSize,
+                        color: context.textTheme.labelMedium!.color,
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-        ),
 
-        LabeledColumn(
-          title: "based in",
-          child: InkWell(
-            onTap: () {},
-            child: txt("Iran · Available in tabriz"),
+          LabeledColumn(
+            title: "based in",
+            child: InkWell(
+              onTap: () {},
+              child: txt(
+                "Iran · Available in tabriz",
+                style: context.textTheme.bodyLarge,
+              ),
+            ),
           ),
-        ),
-      ],
+
+          SizedBox(),
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_web_project/core/theme/app_fonts.dart';
 import 'package:portfolio_web_project/core/theme/app_theme.dart';
+import 'package:portfolio_web_project/core/theme/app_typography.dart';
 
 extension ThemeExtension on BuildContext {
   //? get app theme data
@@ -9,5 +11,11 @@ extension ThemeExtension on BuildContext {
   ColorScheme get colorScheme => theme.colorScheme;
 
   //? get app text theme
-  TextTheme get textTheme => theme.textTheme;
+  TextTheme get textTheme =>
+      AppTypography(MediaQuery.sizeOf(this).width).textTheme;
+
+  //? get app fonts
+  String get mono => AppFonts.mono;
+  String get serif => AppFonts.serif;
+  String get sans => AppFonts.sans;
 }
