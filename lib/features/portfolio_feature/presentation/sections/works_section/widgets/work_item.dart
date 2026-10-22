@@ -38,7 +38,7 @@ class WorkItem extends StatelessWidget {
           children: [
             //* image section
             SizedBox(
-              width: double.infinity,
+              width: width,
               height: 200,
               child: Stack(
                 fit: StackFit.expand,

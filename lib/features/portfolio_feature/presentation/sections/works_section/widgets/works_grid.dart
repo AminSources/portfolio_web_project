@@ -27,7 +27,7 @@ class _WorksGridState extends State<WorksGrid> {
       builder: (context, state) {
         //? on idle state
         if (state is WorksInitial) {
-          return SizedBox.expand();
+          return SizedBox.shrink();
         }
 
         //? on loading state
